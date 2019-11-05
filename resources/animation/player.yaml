@@ -1,0 +1,24 @@
+---
+name: "Player"
+spriteSheet: "spritesheet.json"
+material: "Hale/Sprite"
+directions:
+  - { name: "right", fileName: "side" }
+  - { name: "south right", fileName: "diagdown" }
+  - { name: "south" }
+  - { name: "south left", fileName: "diagdown", flip: true }
+  - { name: "left", fileName: "side", flip: true }
+  - { name: "north left", fileName: "diagup", flip: true }
+  - { name: "north" }
+  - { name: "north right", fileName: "diagup" }
+
+sequences:
+  - name: "idle"
+    fps: 10
+    fileName: "1_%dir%_%f:01%.png"
+    frames: [0-0]
+  - name: "run"
+    fps: 10
+    fileName: "1_%dir%_%f:01%.png"
+    frames: [0-3]
+...

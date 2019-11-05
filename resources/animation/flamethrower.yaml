@@ -1,0 +1,19 @@
+---
+name: "Flamethrower"
+spriteSheet: "spritesheet.json"
+material: "Hale/Sprite"
+directions:
+  - { name: "right", fileName: "side" }
+  - { name: "south right", fileName: "diagdown" }
+  - { name: "south", fileName: "down" }
+  - { name: "south left", fileName: "diagdown", flip: true }
+  - { name: "left", fileName: "side", flip: true }
+  - { name: "north left", fileName: "diagup", flip: true }
+  - { name: "north", fileName: "up" }
+  - { name: "north right", fileName: "diagup" }
+sequences:
+  - name: "default"
+    fps: 10
+    fileName: "flamethrower_%dir%.png"
+    frames: [1-1]  
+...

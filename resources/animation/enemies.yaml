@@ -1,0 +1,15 @@
+---
+name: "Enemy"
+spriteSheet: "spritesheet.json"
+material: "Hale/Sprite"
+directions:
+  - { name: "north", fileName: "back" }
+  - { name: "right", fileName: "side", flip: true }
+  - { name: "south", fileName: "front" }
+  - { name: "left", fileName: "side" }
+sequences:  
+  - name: "default"
+    fps: 10
+    fileName: "slime1_%dir%_%f:01%.png"
+    frames: [0-3]
+...
