@@ -143,6 +143,7 @@ component:
   name: Camera
   members:
     - camera: hale::Camera
+    - offset: hale::Point2
 
 ---
 
@@ -381,6 +382,9 @@ system:
     - player:
       - Player: read
       - Position: read
+    - cursor:
+      - Position: read
+      - Cursor: read
 
 ---
 

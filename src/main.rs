@@ -92,7 +92,8 @@ fn create_camera(world: &mut World, target: hale::Point2) {
     world
         .create_entity()
         .add_component(Camera {
-            camera: hale::Camera::new(target, hale::Vector2::new(0.3, 0.3))            
+            camera: hale::Camera::new(target, hale::Vector2::new(0.3, 0.3)),
+            offset: hale::Point2::new(0., 0.)
         });
 }
 
