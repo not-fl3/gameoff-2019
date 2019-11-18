@@ -8,6 +8,29 @@ struct GameStage;
 
 impl api::Stage for GameStage {}
 
+pub fn create_smoke(world: &mut World, api: &mut api::Api, position: hale::Point2) {
+    world
+        .create_entity()
+        .add_component(Sprite {
+            sprite: hale::api::Sprite::new(),
+            layer: 10000
+        })
+        .add_component(SpriteAnimation {
+            player: hale::AnimationPlayer::new(
+                api.get_resource::<hale::api::Animation>("Smoke"),
+                "default",
+                "default",
+            ),
+        })
+        .add_component(Smoke {
+            speed: hale::Vector2::new(hale::rand::gen_range(-20f32, 20f32), -50.)
+        })
+        .add_component(Position {
+            position
+        })
+        .add_component(TTL { time_left: 0.5 });
+}
+
 fn create_player(world: &mut World, api: &mut api::Api, position: hale::Point2) {
     let weapon = world
         .create_entity()
@@ -62,6 +85,7 @@ fn create_player(world: &mut World, api: &mut api::Api, position: hale::Point2) 
             shooting: false,
             shoot_dir: hale::Vector2::new(0., 0.),
             cooldown: 0.0,
+            smokes: 0,
             weapon
         })
         .add_component(Collider {

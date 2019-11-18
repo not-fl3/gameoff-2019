@@ -13,12 +13,26 @@ impl ShooterSystem {
 
         if e.shooter.shooting && *cooldown < 0.01 {
             *cooldown = gun.cooldown;
+
+            let muzzle_position = e.position.position + gun.muzzle;
+
+            if e.shooter.smokes >= 0 {
+                e.shooter.smokes -= 1;
+                create_smoke(self.get_world(), self.get_api(), muzzle_position);
+            } else if hale::rand::gen_range::<i32>(0, 20) == 0 {
+                create_smoke(self.get_world(), self.get_api(), muzzle_position);
+            }
+
             self.spawn_bullet(
                 &gun.kind,
-                e.position.position + gun.muzzle,
+                muzzle_position,
                 e.shooter.shoot_dir,
                 e.velocity.velocity,
             );
+        }
+
+        if e.shooter.shooting == false {
+            e.shooter.smokes = 7;
         }
     }
 

@@ -101,6 +101,7 @@ component:
     - shoot_dir: hale::Vector2
     - cooldown: f32
     - weapon: hale::EntityId
+    - smokes: i32
 
 ---
 
@@ -149,6 +150,13 @@ component:
 
 component:
   name: Cursor
+
+---
+
+component:
+  name: Smoke
+  members:
+    - speed: hale::Vector2
 
 ---
 
@@ -414,6 +422,14 @@ system:
 
 ---
 
+system:
+  name: Smoke
+  families:
+    - main:
+      - Smoke: read
+      - Position: write
+
+---
 
 message: 
   name: Collision

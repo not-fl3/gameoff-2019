@@ -1,0 +1,11 @@
+---
+name: "Smoke"
+spriteSheet: "spritesheet.json"
+material: "Hale/Sprite"
+sequences:
+  - name: "default"
+    fps: 15
+    fileName: "smoke_fire_%f:01%.png"
+    frames: [0-7]  
+    loop: false
+...
