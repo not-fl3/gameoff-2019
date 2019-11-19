@@ -145,6 +145,48 @@ fn create_camera(world: &mut World, target: hale::Point2) {
         });
 }
 
+fn create_base(world: &mut World, api: &mut api::Api, position: hale::Point2) {
+    world
+        .create_entity()
+        .add_component(Position {
+            position: position,
+        })
+        .add_component(Collider {
+            rect: hale::Rect::new(-15., -15., 30., 30.),
+            layer: 1,
+            trigger: false,
+            is_static: true,
+        })
+        .add_component(Sprite {
+            sprite: hale::api::Sprite::new()
+                .with_spritesheet(
+                    api.resources(),
+                    "spritesheet.json",
+                    "base.png",
+                )
+                .with_pivot(hale::Vector2::new(0.5, 0.5)),
+            layer: -20,
+        })
+        .add_component(Health { max: 40, current: 40 });
+
+    world
+        .create_entity()
+        .add_component(Position {
+            position: position + hale::Vector2::new(0., -20.),
+        })
+        .add_component(Sprite {
+            sprite: hale::api::Sprite::new(),
+            layer: 20000,
+        })
+        .add_component(SpriteAnimation {
+            player: hale::AnimationPlayer::new(
+                api.get_resource::<hale::api::Animation>("Crystal"),
+                "default",
+                "default",
+            ),
+        });
+}
+
 fn create_room(world: &mut World, api: &mut api::Api, pos: hale::Point2, id: hale::EntityId) {
     world
         .create_entity()
@@ -184,6 +226,8 @@ fn create_room(world: &mut World, api: &mut api::Api, pos: hale::Point2, id: hal
                 room_id: id as i32,
             });
     }
+
+    create_base(world, api, hale::Point2::new(340., 300.));
 }
 
 fn main() {

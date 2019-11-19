@@ -1,0 +1,11 @@
+---
+name: "Crystal"
+spriteSheet: "spritesheet.json"
+material: "Hale/Sprite"
+sequences:
+  - name: "default"
+    fps: 10
+    fileName: "crystal_%f:01%.png"
+    frames: [0-3]
+...
+
