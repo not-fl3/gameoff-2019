@@ -18,7 +18,7 @@ pub fn create_smoke(world: &mut World, api: &mut api::Api, position: hale::Point
         .add_component(SpriteAnimation {
             player: hale::AnimationPlayer::new(
                 api.get_resource::<hale::api::Animation>("Smoke"),
-                "default",
+                "smoke",
                 "default",
             ),
         })
@@ -30,6 +30,30 @@ pub fn create_smoke(world: &mut World, api: &mut api::Api, position: hale::Point
         })
         .add_component(TTL { time_left: 0.5 });
 }
+
+pub fn create_fire(world: &mut World, api: &mut api::Api, position: hale::Point2) {
+    world
+        .create_entity()
+        .add_component(Sprite {
+            sprite: hale::api::Sprite::new(),
+            layer: 10000
+        })
+        .add_component(SpriteAnimation {
+            player: hale::AnimationPlayer::new(
+                api.get_resource::<hale::api::Animation>("Smoke"),
+                "fire",
+                "default",
+            ),
+        })
+        .add_component(Smoke {
+            speed: hale::Vector2::new(hale::rand::gen_range(-40f32, 40f32), -50.)
+        })
+        .add_component(Position {
+            position
+        })
+        .add_component(TTL { time_left: 0.25 }); 
+}
+
 
 fn create_player(world: &mut World, api: &mut api::Api, position: hale::Point2) {
     let weapon = world

@@ -431,6 +431,19 @@ system:
 
 ---
 
+system:
+  name: BulletFx
+  families:
+    - main:
+      - Collider: read
+      - Bullet: read
+      - Position: read
+  messages:
+    - Collision: receive
+  access: ['world', 'api']
+
+---
+
 message: 
   name: Collision
   members:

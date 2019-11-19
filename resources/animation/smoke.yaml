@@ -3,9 +3,15 @@ name: "Smoke"
 spriteSheet: "spritesheet.json"
 material: "Hale/Sprite"
 sequences:
-  - name: "default"
+  - name: "smoke"
     fps: 15
     fileName: "smoke_fire_%f:01%.png"
     frames: [0-7]  
     loop: false
+  - name: "fire"
+    fps: 30
+    fileName: "smoke_fire_%f:01%.png"
+    frames: [8-15]  
+    loop: false
 ...
+

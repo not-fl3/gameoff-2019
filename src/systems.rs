@@ -20,3 +20,4 @@ mod camera_follow_system;
 mod sprite_animation_system;
 mod health_bars_render_system;
 mod smoke_system;
+mod bullet_fx_system;
