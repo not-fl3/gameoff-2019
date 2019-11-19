@@ -160,6 +160,11 @@ component:
 
 ---
 
+component:
+  name: Base
+
+---
+
 system: 
   name: PlayerInput
   families:
@@ -248,7 +253,7 @@ system:
 ---
 
 system:
-  name: PlayerSeeking
+  name: TargetSeeking
   families:
     - main:
       - Position: read
@@ -257,6 +262,9 @@ system:
     - players:
       - Position: read
       - Player: read
+    - bases:
+      - Position: read
+      - Base: read
 
 ---
 

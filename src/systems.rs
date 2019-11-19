@@ -9,7 +9,7 @@ mod integrate_velocity_system;
 mod mob_system;
 mod movement_system;
 mod player_input_system;
-mod player_seeking_system;
+mod target_seeking_system;
 mod repulsion_system;
 mod shooter_system;
 mod enemy_animation_system;

@@ -1,5 +1,4 @@
 use crate::{bullet_fx::*, *};
-use hale::MessageSender;
 
 impl BulletFxSystem {
     pub fn update(&mut self, _: hale::Time, _: MainFamily) {}

@@ -1,4 +1,4 @@
-use crate::{smoke::*, *};
+use crate::smoke::*;
 
 impl SmokeSystem {
     pub fn update(&mut self, t: hale::Time, e: MainFamily) {
