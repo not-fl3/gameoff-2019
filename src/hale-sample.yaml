@@ -452,6 +452,22 @@ system:
 
 ---
 
+system:
+  name: EnemyExplosion
+  families:
+    - main:
+      - Position: write
+      - Enemy: read
+      - Mob: read
+    - bases:
+      - Position: read
+      - Base: read
+  messages:
+    - Damage: send
+  access: ['world', 'api']
+
+---
+
 message: 
   name: Collision
   members:

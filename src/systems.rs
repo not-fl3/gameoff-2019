@@ -21,3 +21,4 @@ mod sprite_animation_system;
 mod health_bars_render_system;
 mod smoke_system;
 mod bullet_fx_system;
+mod enemy_explosion_system;
