@@ -21,6 +21,7 @@ pub fn create_smoke(world: &mut World, api: &mut api::Api, position: hale::Point
                 "smoke",
                 "default",
             ),
+            random_first_frame: false
         })
         .add_component(Smoke {
             speed: hale::Vector2::new(hale::rand::gen_range(-20f32, 20f32), -50.)
@@ -44,6 +45,7 @@ pub fn create_fire(world: &mut World, api: &mut api::Api, position: hale::Point2
                 "fire",
                 "default",
             ),
+            random_first_frame: false
         })
         .add_component(Smoke {
             speed: hale::Vector2::new(hale::rand::gen_range(-40f32, 40f32), -50.)
@@ -69,6 +71,7 @@ fn create_player(world: &mut World, api: &mut api::Api, position: hale::Point2) 
                 "default",
                 "default",
             ),
+            random_first_frame: false
         })
         .add_component(Gun {
             cooldown: 0.01,
@@ -90,6 +93,7 @@ fn create_player(world: &mut World, api: &mut api::Api, position: hale::Point2) 
                 "idle",
                 "default",
             ),
+            random_first_frame: false
         })
         .add_component(Sprite {
             sprite: hale::api::Sprite::new(),
@@ -184,7 +188,9 @@ fn create_base(world: &mut World, api: &mut api::Api, position: hale::Point2) {
                 "default",
                 "default",
             ),
+            random_first_frame: true
         });
+
 }
 
 fn create_room(world: &mut World, api: &mut api::Api, pos: hale::Point2, id: hale::EntityId) {

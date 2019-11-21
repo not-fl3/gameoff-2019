@@ -37,6 +37,7 @@ component:
   name: SpriteAnimation
   members:
     - player: hale::AnimationPlayer
+    - random_first_frame: bool
 
 ---
 

@@ -47,6 +47,7 @@ impl EnemySpawningSystem {
                     "default",
                     "right",
                 ),
+                random_first_frame: true
             })
             .add_component(Sprite {
                 sprite: hale::api::Sprite::new(),
