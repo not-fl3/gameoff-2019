@@ -22,3 +22,5 @@ mod health_bars_render_system;
 mod smoke_system;
 mod bullet_fx_system;
 mod enemy_explosion_system;
+mod coin_spawner_system;
+

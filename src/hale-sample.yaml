@@ -161,8 +161,21 @@ component:
 
 ---
 
+
+component:
+  name: Coin
+
+---
+
 component:
   name: Base
+
+---
+
+component:
+  name: CoinSpawner
+  members:
+    - coins: Vec<(hale::EntityId, hale::Vector2)>
 
 ---
 
@@ -466,6 +479,19 @@ system:
   messages:
     - Damage: send
   access: ['world', 'api']
+
+---
+
+system:
+  name: CoinSpawner
+  families:
+    - main:
+      - Position: read
+      - CoinSpawner: write
+    - coins:
+      - Position: write
+      - Coin: read
+  acces: ['world', 'api']
 
 ---
 

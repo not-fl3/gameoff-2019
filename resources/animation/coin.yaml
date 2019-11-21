@@ -1,0 +1,10 @@
+---
+name: "Coin"
+spriteSheet: "spritesheet.json"
+material: "Hale/Sprite"
+sequences:
+  - name: "default"
+    fps: 8
+    fileName: "coin_%f:01%.png"
+    frames: [0-7]
+...
