@@ -179,6 +179,13 @@ component:
 
 ---
 
+component:
+  name: FlyAway
+  members:
+    - target: hale::Point2
+
+---
+
 system: 
   name: PlayerInput
   families:
@@ -491,6 +498,30 @@ system:
     - coins:
       - Position: write
       - Coin: read
+  acces: ['world', 'api']
+
+---
+
+system:
+  name: FlyAway
+  families:
+    - main:
+      - Position: write
+      - FlyAway: read
+    - camera:
+      - Camera: read
+
+---
+
+system:
+  name: CoinCollector
+  families:
+    - main:
+      - Position: read
+      - Coin: write
+    - player:
+      - Position: read
+      - Player: read
   acces: ['world', 'api']
 
 ---
